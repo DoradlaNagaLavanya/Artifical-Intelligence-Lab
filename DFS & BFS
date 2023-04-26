@@ -1,0 +1,41 @@
+graph = {
+   0:[1,2],
+   1:[2],
+   2:[0,3],
+   3:[3],
+}
+def bfs(graph,node):
+    visited=[]
+    queue=[]   
+    visited.append(node)
+    queue.append(node)
+    while queue:
+        s=queue.pop(0)
+        print(s,end=" ")
+        for neighbor in graph[s]:
+            if neighbor not in visited:
+                visited.append(neighbor)
+                queue.append(neighbor)
+def dfs(graph,node):
+    visited=[]
+    queue=[]
+    visited.append(node)
+    queue.append(node)
+    
+    while queue:
+        t=queue.pop()
+        print(t, end=" ")
+        
+        for neighbor in graph[t]:
+            if neighbor not in visited:
+                visited.append(neighbor)
+                queue.append(neighbor)
+                
+                
+    
+dfs(graph,0)   
+print("   ")
+bfs(graph,0)             
+                
+        
+
